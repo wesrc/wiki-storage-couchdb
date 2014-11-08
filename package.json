@@ -24,7 +24,8 @@
     "event-stream": "*",
     "cradle": "~0.6.7",
     "wiki-server": "*",
-    "wiki-client": "*"
+    "wiki-client": "*",
+    "wiki-plugin-chart": "*"
   },
   "devDependencies": {
       "mocha": "*",

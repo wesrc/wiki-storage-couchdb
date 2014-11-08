@@ -1,12 +1,7 @@
 path = require('path')
 random = require('../node_modules/wiki-server/lib/random_id')
-testid = random()
 
-argv = require('../node_modules/wiki-server/lib/defaultargs.coffee')(
-  {data: path.join('/tmp', 'sfwtests', testid), root: '../node_modules/wiki-server/', database:{
-      type:'couchdb', host: '127.0.0.1', port: 5984
-    }
-  })
+argv = require('../node_modules/wiki-server/lib/defaultargs.coffee')({root: 'node_modules/wiki-server/', database:{'type':'couchdb'}})
 
 try
   page = require('../lib/couchdb.js')(argv)
@@ -34,6 +29,12 @@ describe 'couchdb', ->
       page.get('welcome-visitors', (e, got) ->
         if e then throw e
         got.title.should.equal 'Welcome Visitors'
+        done()
+      )
+    it 'should copy a page from plugins if nonexistant in db', (done) ->
+      page.get('air-temperature', (e, got) ->
+        if e then throw e
+        got.title.should.equal 'Air Temperature'
         done()
       )
     it 'should create a page if it exists nowhere', (done) ->
