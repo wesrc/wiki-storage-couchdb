@@ -1,4 +1,4 @@
-# Wiki Storage CouchDB
+# Wiki Storage CouchDB [![Build Status](https://travis-ci.org/wesrc/wiki-storage-couchdb.svg?branch=master)](https://travis-ci.org/wesrc/wiki-storage-couchdb)
 
 An experimental module to provide CouchDB storage for an external module for
 Federated Wiki, rather than being built into the core.
@@ -35,7 +35,7 @@ locally or to where you wish to install Federated Wiki.*
 is done by adding the following configuration setting
 
 ```
---database '{"type": "wiki-storage-couchdb", "url": "...", "options": {...}}'
+--database '{"type": "couchdb", "name": "otherpages", "host": '127.0.0.1', "port": ...}'
 ```
 
 ## Developer Notes
