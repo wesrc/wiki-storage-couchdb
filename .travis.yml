@@ -5,4 +5,6 @@ install:
   - npm install
 services:
   - couchdb
-script: "node_modules/.bin/mocha test"
+script:
+  - curl -X PUT http://127.0.0.1:5984/pages
+  - node_modules/.bin/mocha
