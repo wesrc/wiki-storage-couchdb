@@ -1,0 +1,51 @@
+{
+  "name": "wiki-storage-couchdb",
+  "description": "CouchDB storage for Federated Wiki",
+  "version": "0.0.1",
+  "author": {
+    "name": "Leander Damme",
+    "email": "leander@wesrc.com",
+    "url": "https://wesrc.com"
+  },
+  "contributors": [
+    {
+      "name": "Ward Cunningham",
+      "email": "ward@c2.com",
+      "url": "http://ward.fed.wiki.org"
+    },
+    {
+      "name": "Nick Niemeir",
+      "email": "nick.niemeir@gmail.com",
+      "url": "http://nrn.io"
+    }
+  ],
+  "dependencies": {
+    "coffee-script": "1.8",
+    "event-stream": "*",
+    "cradle": "~0.6.7",
+    "wiki-server": "*",
+    "wiki-client": "*"
+  },
+  "devDependencies": {
+      "mocha": "*",
+      "should": "*"
+    },
+  "engines": {
+    "node": "0.10"
+  },
+  "testling": {
+    "harness": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fedwiki/wiki-storage-couchdb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fedwiki/wiki-storage-couchodb/issues"
+  },
+  "readme": "# Wiki Storage CouchDB\n\nAn experimental module to provide CouchDB storage for an external module for\nFederated Wiki, rather than being built into the core.\n\nThe motivation for this is that not everybody is using CouchDB for storage, also\nallows for the integration to be independently maintained.\n\n## Using CouchDB for Wiki Storage\n\nThe following steps will need to be followed:\n\n1. Take a copy of the [fedwiki/wiki-node](https://github.com/fedwiki/wiki-node)\nrepository. *Either create a fork on the GitHub site, or clone a copy either\nlocally or to where you wish to install Federated Wiki.*\n\n2. In your copy, edit `package.json` to add the following line to the dependencies:\n\n```\n    \"wiki-storage-couchdb\": \"*\",\n```\n\n3. If you are using git for deployment, commit this change to git.\n\n4. Install your modified version of Federated Wiki, either:\n\n  * running `npm install 'your-github-id'/wiki-node`, if you are using github\n  for deployment, or\n\n  * if you modified `package.json` inplace by running `npm install` from within\n  the modified directory. See [npm-install](https://www.npmjs.org/doc/cli/npm-install.html)\n  for more ideas.\n\n5. When starting Federated Wiki you will need to tell it to use LevelDB. This\nis done by adding the following configuration setting\n\n```\n--database '{\"type\": \"wiki-storage-couchdb\", \"url\": \"...\", \"options\": {...}}'\n```\n\n## Developer Notes\n\nShould there be a need to modify this package, there is a test file\n`test/couchdb.coffee` that can be copied to the `test` directory of the\nwiki-node-server repository that you are developing with. A test CouchDB will\nbe required, and configured in the test script.\n\n**N.B.** the plugin page test requires a copy of the `wiki-plugin-chart`\nrepository to be alongside the wiki-node-server repository.\n",
+  "readmeFilename": "ReadMe.md",
+  "homepage": "https://github.com/fedwiki/wiki-storage-couchdb",
+  "_id": "wiki-storage-couchdb@0.0.1",
+  "scripts": {}
+}
