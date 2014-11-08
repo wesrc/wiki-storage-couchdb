@@ -2,7 +2,11 @@ path = require('path')
 random = require('../node_modules/wiki-server/lib/random_id')
 testid = random()
 
-argv = require('../node_modules/wiki-server/lib/defaultargs.coffee')({data: path.join('/tmp', 'sfwtests', testid), root: '../node_modules/wiki-server/'})
+argv = require('../node_modules/wiki-server/lib/defaultargs.coffee')(
+  {data: path.join('/tmp', 'sfwtests', testid), root: '../node_modules/wiki-server/', database:{
+      type:'couchdb', host: '127.0.0.1', port: 5984
+    }
+  })
 
 try
   page = require('../lib/couchdb.js')(argv)
