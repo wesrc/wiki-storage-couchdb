@@ -43,3 +43,10 @@ describe 'couchdb', ->
         got.should.equal('Page not found')
         done()
       )
+  describe '#page.pages()', ->
+    it 'should get all existing pages', (done) ->
+      page.pages((e, got) ->
+        if e then throw e
+        got[0].synopsis.should.equal('A page with no story.')
+        done()
+      )

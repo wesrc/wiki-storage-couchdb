@@ -8,4 +8,5 @@ services:
   - couchdb
 script:
   - curl -X PUT http://127.0.0.1:5984/pages
+  - curl -X PUT http://127.0.0.1:5984/pages/_design/pages --data-binary @test/pages-view.json
   - node_modules/.bin/mocha

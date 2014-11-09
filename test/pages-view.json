@@ -1,0 +1,10 @@
+{
+   "_id": "_design/pages",
+   "language": "javascript",
+   "views": {
+       "all": {
+           "map": "function (doc) { if (doc.title) emit(doc.slug, doc); }"
+       }
+   }
+}
+
