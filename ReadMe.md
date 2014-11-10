@@ -1,4 +1,4 @@
-# Wiki Storage CouchDB [![Build Status](https://travis-ci.org/wesrc/wiki-storage-couchdb.svg?branch=master)](https://travis-ci.org/wesrc/wiki-storage-couchdb)
+# Wiki Storage CouchDB [![Build Status](https://travis-ci.org/fedwiki/wiki-storage-couchdb.svg?branch=master)](https://travis-ci.org/wesrc/wiki-storage-couchdb)
 
 An experimental module to provide CouchDB storage for an external module for
 Federated Wiki, rather than being built into the core.
@@ -40,10 +40,4 @@ is done by adding the following configuration setting
 
 ## Developer Notes
 
-Should there be a need to modify this package, there is a test file
-`test/couchdb.coffee` that can be copied to the `test` directory of the
-wiki-node-server repository that you are developing with. A test CouchDB will
-be required, and configured in the test script.
-
-**N.B.** the plugin page test requires a copy of the `wiki-plugin-chart`
-repository to be alongside the wiki-node-server repository.
+To run the tests for `wiki-storage-couchdb` install (dev) dependencies with `$ npm install` then run the tests with node_modules/.bin/mocha test
