@@ -1,0 +1,24 @@
+{
+    "globals": {
+        "module": false,
+        "define": false,
+        "require": false
+    },
+    "bitwise": true,
+    "camelcase": true,
+    "curly": true,
+    "eqeqeq": true,
+    "es3": true,
+    "indent": 4,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "nonew": false,
+    "quotmark": "single",
+    "undef": true,
+    "unused": "vars",
+    "strict": true,
+    "trailing": false,
+    "browser": true,
+    "devel": true //This should be disabled in production mode!
+}
